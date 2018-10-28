@@ -64,8 +64,11 @@
                                         </form>
                                     </li>
                                 </ul>
-                            </li>
+                            
                         @endguest
+                        <li><a href="/setlang/ru"></a>Ru</li>
+                        <li><a href="/setlang/en"></a>En</li>
+                        <li><a href="/setlang/uk"></a>Ua</li>
                     </ul>
                 </div>
             </div>
