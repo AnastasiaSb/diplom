@@ -1,6 +1,9 @@
 <?php
 
-return [ //1изм
+return [ 
+	'title' => 'Регистрация', 
 	'name' => 'Имя',
-	'password' => 'Пароль'
+	'password' => 'Пароль',
+	'confirmPassword' => 'Подтвердите пароль',
+	'phone' => 'Телефон'
 ];
