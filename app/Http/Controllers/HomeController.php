@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Shop\Categories\Category;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,8 +14,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Category $category)
     {
+        $this->category = $category;
         // $this->middleware('auth');
     }
 
@@ -23,6 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       $categories = $this->category->with(['images', 'subCategories'])->parent()->get();
+       return view('home', ['categories' => $categories]);
     }
 }

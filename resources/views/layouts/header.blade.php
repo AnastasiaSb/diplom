@@ -54,4 +54,4 @@
 		<![endif]-->
 
 	</head>
-	<body>
+	<body class="cnt-home">
