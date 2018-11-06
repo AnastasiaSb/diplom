@@ -20,7 +20,8 @@ Route::group(['prefix'=>LocaleMiddleware::getLocale()], function(){
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
+    Route::get('/product/{product}', 'ShopController@product');
+    Route::post('/comment/add', 'CommentController@store');
 Route::group(['prefix'=>'/admin', 'namespace'=>'Admin', 'middleware'=>'auth', 'role'], function(){ // 2е пункт 15 - 'middleware'php посредник
 	Route::get('/', 'AdminController@dashboard');
 	// создаем маршрутизацию

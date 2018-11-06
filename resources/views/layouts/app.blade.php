@@ -4,7 +4,7 @@
 
 @include('layouts.main-header')
 
-@include('layouts.sidemenu')
+
 <!--  
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">

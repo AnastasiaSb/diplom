@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Shop\Categories\Category;
+use App\Shop\Products\Product;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Category $category)
+    public function __construct(Category $category, Product $product)
     {
         $this->category = $category;
+        $this->product = $product;
         // $this->middleware('auth');
     }
 
@@ -28,6 +30,7 @@ class HomeController extends Controller
     public function index()
     {
        $categories = $this->category->with(['images', 'subCategories'])->parent()->get();
-       return view('home', ['categories' => $categories]);
+       $products = $this->product->where('recommended', '=', '1')->get();
+       return view('home',['categories' => $categories, 'products'=>$products ]);
     }
 }

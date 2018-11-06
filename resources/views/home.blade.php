@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @include('layouts.sidemenu')
+    <div class="col-xs-12 col-sm-12 col-md-9 homebanner-holder">
+    @include('layouts.new-products-slider')
+    </div>
+
 <!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
